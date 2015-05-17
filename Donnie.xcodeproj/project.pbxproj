@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		61898A881B08EB840052FD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A871B08EB840052FD05 /* AppDelegate.swift */; };
 		61898A8A1B08EB840052FD05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A891B08EB840052FD05 /* ViewController.swift */; };
-		61898A8D1B08EB840052FD05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61898A8B1B08EB840052FD05 /* Main.storyboard */; };
 		61898A8F1B08EB840052FD05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61898A8E1B08EB840052FD05 /* Images.xcassets */; };
 		61898A921B08EB840052FD05 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61898A901B08EB840052FD05 /* LaunchScreen.xib */; };
 		61898A9E1B08EB840052FD05 /* DonnieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A9D1B08EB840052FD05 /* DonnieTests.swift */; };
@@ -30,7 +29,6 @@
 		61898A861B08EB840052FD05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61898A871B08EB840052FD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61898A891B08EB840052FD05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		61898A8C1B08EB840052FD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61898A8E1B08EB840052FD05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		61898A911B08EB840052FD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		61898A971B08EB840052FD05 /* DonnieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonnieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +77,6 @@
 			children = (
 				61898A871B08EB840052FD05 /* AppDelegate.swift */,
 				61898A891B08EB840052FD05 /* ViewController.swift */,
-				61898A8B1B08EB840052FD05 /* Main.storyboard */,
 				61898A8E1B08EB840052FD05 /* Images.xcassets */,
 				61898A901B08EB840052FD05 /* LaunchScreen.xib */,
 				61898A851B08EB840052FD05 /* Supporting Files */,
@@ -192,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61898A8D1B08EB840052FD05 /* Main.storyboard in Resources */,
 				61898A921B08EB840052FD05 /* LaunchScreen.xib in Resources */,
 				61898A8F1B08EB840052FD05 /* Images.xcassets in Resources */,
 			);
@@ -236,14 +232,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		61898A8B1B08EB840052FD05 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61898A8C1B08EB840052FD05 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		61898A901B08EB840052FD05 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
