@@ -12,6 +12,7 @@
 		61898A8F1B08EB840052FD05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61898A8E1B08EB840052FD05 /* Images.xcassets */; };
 		61898A921B08EB840052FD05 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61898A901B08EB840052FD05 /* LaunchScreen.xib */; };
 		61898A9E1B08EB840052FD05 /* DonnieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A9D1B08EB840052FD05 /* DonnieTests.swift */; };
+		F850783E1B09632900D71E4A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850783D1B09632900D71E4A /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		61898A971B08EB840052FD05 /* DonnieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonnieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61898A9C1B08EB840052FD05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61898A9D1B08EB840052FD05 /* DonnieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonnieTests.swift; sourceTree = "<group>"; };
+		F850783D1B09632900D71E4A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		61898AA71B08EC530052FD05 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F850783D1B09632900D71E4A /* Person.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F850783E1B09632900D71E4A /* Person.swift in Sources */,
 				61898A8A1B08EB840052FD05 /* ViewController.swift in Sources */,
 				61898A881B08EB840052FD05 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				61898AA31B08EB840052FD05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61898AA41B08EB840052FD05 /* Build configuration list for PBXNativeTarget "DonnieTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				61898AA61B08EB840052FD05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
