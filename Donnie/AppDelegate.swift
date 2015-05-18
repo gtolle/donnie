@@ -26,24 +26,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         person.phoneNumber = "415-123-4567"
         person.gender = "male"
         
-        NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
-        
-        NSLog(person.createGreeting("Doctor"))
-        NSLog(person.createGreeting("Lord"))
-        NSLog(person.createGreeting("Maester"))
-        NSLog(person.createGreeting("Khal"))
-        
         var person2 = Person(a: "Gilman", b: "Tolle", c: "gilman@test.com")
-        person.gender = "male"
+        person2.gender = "male"
         
-        NSLog(person2.createGreeting("Lord Commander"))
-        NSLog(person2.createGreeting("Warden"))
-        NSLog(person2.createGreeting("Magister"))
-        NSLog(person2.createGreeting("King"))
+        var person3 = Person(a: "Nicole", b: "Chiu-Wang", c: "nicole@test.com")
+        person3.gender = "female"
+        
+        var person4 = Person(a: "Peppermint", b: "Patty", c: "patty@test.com")
+//        person4.gender = nil
+//        NSLog("person4's gender is " + person4.gender!)
+        
+        NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
+
+        NSLog(person.createGreeting("Maester"))
+        NSLog(person2.createGreeting("Khal"))
         
         NSLog(person.createIntroduction("Maester"))
         
         NSLog(person.thirdPartyIntroduction("Maester"))
+        NSLog(person2.thirdPartyIntroduction("Khal"))
+        NSLog(person3.thirdPartyIntroduction("Khaleesi"))
+//        NSLog(person4.thirdPartyIntroduction("Warlock"))
         
         return true
     }
