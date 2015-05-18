@@ -20,4 +20,8 @@ class Person {
         self.lastName = b;
         self.email = c;
     }
+    
+    func createGreeting(title: String) -> String {
+        return "Hello, \(title) \(self.lastName)"
+    }
 }
