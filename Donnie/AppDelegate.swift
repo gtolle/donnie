@@ -27,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
         
+        NSLog(person.createGreeting("Doctor"))
+        NSLog(person.createGreeting("Lord"))
+        NSLog(person.createGreeting("Maester"))
+        NSLog(person.createGreeting("Khal"))
+        
+        var person2 = Person(a: "Gilman", b: "Tolle", c: "gilman@test.com")
+        
+        NSLog(person2.createGreeting("Lord Commander"))
+        NSLog(person2.createGreeting("Warden"))
+        NSLog(person2.createGreeting("Magister"))
+        NSLog(person2.createGreeting("King"))
+        
         return true
     }
 
