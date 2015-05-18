@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var person = Person(a: "Donnie", b: "Wang", c: "donnie@test.com")
         person.address = "1 Market St. San Francisco CA 94110"
         person.phoneNumber = "415-123-4567"
+        person.gender = "male"
         
         NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
         
@@ -33,11 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog(person.createGreeting("Khal"))
         
         var person2 = Person(a: "Gilman", b: "Tolle", c: "gilman@test.com")
+        person.gender = "male"
         
         NSLog(person2.createGreeting("Lord Commander"))
         NSLog(person2.createGreeting("Warden"))
         NSLog(person2.createGreeting("Magister"))
         NSLog(person2.createGreeting("King"))
+        
+        NSLog(person.createIntroduction("Maester"))
+        
+        NSLog(person.thirdPartyIntroduction("Maester"))
         
         return true
     }
