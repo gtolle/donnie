@@ -15,9 +15,9 @@ class Person {
     var address: String?
     var phoneNumber: String?
     
-    init(firstName: String, lastName: String, email: String) {
-        self.firstName = firstName;
-        self.lastName = lastName;
-        self.email = email;
+    init(a: String, b: String, c: String) {
+        self.firstName = a;
+        self.lastName = b;
+        self.email = c;
     }
 }

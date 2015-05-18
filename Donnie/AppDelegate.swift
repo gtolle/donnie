@@ -21,16 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        var person = Person(firstName: "Donnie", lastName: "Wang", email: "donnie@test.com")
+        var person = Person(a: "Donnie", b: "Wang", c: "donnie@test.com")
         person.address = "1 Market St. San Francisco CA 94110"
         person.phoneNumber = "415-123-4567"
         
-        var fullName = "\(person.firstName) \(person.lastName)"
-        var email = person.email
-        var address = person.address
-        var phoneNumber = person.phoneNumber
-        
-        NSLog("\(fullName), \(email), \(address), \(phoneNumber)")
+        NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
         
         return true
     }
