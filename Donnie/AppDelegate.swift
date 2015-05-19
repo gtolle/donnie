@@ -28,13 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var person2 = Person(a: "Gilman", b: "Tolle", c: "gilman@test.com")
         person2.gender = "male"
+        person2.address = "1 Castro St. San Francisco CA 94110"
         
         var person3 = Person(a: "Nicole", b: "Chiu-Wang", c: "nicole@test.com")
         person3.gender = "female"
+        person3.phoneNumber = "415-555-1234"
         
         var person4 = Person(a: "Peppermint", b: "Patty", c: "patty@test.com")
-//        person4.gender = nil
-//        NSLog("person4's gender is " + person4.gender!)
+        NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
         NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
 
@@ -46,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog(person.thirdPartyIntroduction("Maester"))
         NSLog(person2.thirdPartyIntroduction("Khal"))
         NSLog(person3.thirdPartyIntroduction("Khaleesi"))
-//        NSLog(person4.thirdPartyIntroduction("Warlock"))
+        NSLog(person4.thirdPartyIntroduction("Warlock"))
         
         return true
     }

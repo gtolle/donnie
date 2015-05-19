@@ -18,9 +18,9 @@ class Person {
     
     var genderSubjectPronoun: String {
         var result = ""
-        if (self.gender! == "male") {
+        if (self.gender == "male") {
             result = "he"
-        } else if (self.gender! == "female") {
+        } else if (self.gender == "female") {
             result = "she"
         } else {
             result = "they"
@@ -30,9 +30,9 @@ class Person {
     
     var genderObjectPronoun: String {
         var result = ""
-        if (self.gender! == "male") {
+        if (self.gender == "male") {
             result = "him"
-        } else if (self.gender! == "female") {
+        } else if (self.gender == "female") {
             result = "her"
         } else {
             result = "them"
@@ -56,8 +56,12 @@ class Person {
     
     func thirdPartyIntroduction(title: String) -> String {
         var intro = ""
-        if (self.address != nil || self.phoneNumber != nil) {
+        if (self.address != nil && self.phoneNumber != nil) {
             intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Call \(self.genderObjectPronoun) at \(self.phoneNumber!)."
+        } else if (self.address != nil) {
+            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Phone number unknown."
+        } else if (self.phoneNumber != nil) {
+            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). Call \(self.genderObjectPronoun) at \(self.phoneNumber!). Address unknown."
         } else {
             intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). Address and phone number are unknown."
         }
