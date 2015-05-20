@@ -21,33 +21,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        var person = Person(a: "Donnie", b: "Wang", c: "donnie@test.com")
+        var person = Person(firstName: "Donnie", lastName: "Wang", email: "donnie@test.com")
         person.address = "1 Market St. San Francisco CA 94110"
         person.phoneNumber = "415-123-4567"
         person.gender = "male"
+        person.title = "Maester"
         
-        var person2 = Person(a: "Gilman", b: "Tolle", c: "gilman@test.com")
+        var person2 = Person(firstName: "Gilman", lastName: "Tolle", email: "gilman@test.com")
         person2.gender = "male"
         person2.address = "1 Castro St. San Francisco CA 94110"
+        person2.title = "Khal"
         
-        var person3 = Person(a: "Nicole", b: "Chiu-Wang", c: "nicole@test.com")
+        var person3 = Person(firstName: "Nicole", lastName: "Chiu-Wang", email: "nicole@test.com")
         person3.gender = "female"
         person3.phoneNumber = "415-555-1234"
         
-        var person4 = Person(a: "Peppermint", b: "Patty", c: "patty@test.com")
+        var person4 = Person(firstName: "Peppermint", lastName: "Patty", email: "patty@test.com")
         NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
         NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
 
-        NSLog(person.createGreeting("Maester"))
-        NSLog(person2.createGreeting("Khal"))
+        NSLog(person.createGreeting())
+        NSLog(person2.createGreeting())
+
+        NSLog(person.createIntroduction())
         
-        NSLog(person.createIntroduction("Maester"))
+        NSLog(person.thirdPartyIntroduction())
+        NSLog(person2.thirdPartyIntroduction())
+        NSLog(person3.thirdPartyIntroduction())
+        NSLog(person4.thirdPartyIntroduction())
         
-        NSLog(person.thirdPartyIntroduction("Maester"))
-        NSLog(person2.thirdPartyIntroduction("Khal"))
-        NSLog(person3.thirdPartyIntroduction("Khaleesi"))
-        NSLog(person4.thirdPartyIntroduction("Warlock"))
+        var names = ["Alice Marble", "Bob Barker", "Claire Underwood", "Daniel Craig"]
+        
+        for name in names  {
+            println("Hello, I am \(name)")
+        }
         
         return true
     }

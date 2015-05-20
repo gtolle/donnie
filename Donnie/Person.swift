@@ -15,56 +15,69 @@ class Person {
     var address: String?
     var phoneNumber: String?
     var gender: String?
+    var title: String?
     
     var genderSubjectPronoun: String {
-        var result = ""
         if (self.gender == "male") {
-            result = "he"
+            return "he"
         } else if (self.gender == "female") {
-            result = "she"
+            return "she"
         } else {
-            result = "they"
+            return "they"
         }
-        return result
     }
     
     var genderObjectPronoun: String {
-        var result = ""
         if (self.gender == "male") {
-            result = "him"
+            return "him"
         } else if (self.gender == "female") {
-            result = "her"
+            return "her"
         } else {
-            result = "them"
+            return "them"
         }
-        return result
     }
     
-    init(a: String, b: String, c: String) {
-        self.firstName = a;
-        self.lastName = b;
-        self.email = c;
+    init(firstName: String, lastName: String, email: String) {
+        self.firstName = firstName;
+        self.lastName = lastName;
+        self.email = email;
     }
     
-    func createGreeting(title: String) -> String {
-        return "Hello, I am \(title) \(self.lastName)"
-    }
-    
-    func createIntroduction(title: String) -> String {
-        return "\(createGreeting(title)). I live at \(self.address!). My number is \(self.phoneNumber!)."
-    }
-    
-    func thirdPartyIntroduction(title: String) -> String {
-        var intro = ""
-        if (self.address != nil && self.phoneNumber != nil) {
-            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Call \(self.genderObjectPronoun) at \(self.phoneNumber!)."
-        } else if (self.address != nil) {
-            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Phone number unknown."
-        } else if (self.phoneNumber != nil) {
-            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). Call \(self.genderObjectPronoun) at \(self.phoneNumber!). Address unknown."
+    func createGreeting() -> String {
+        if (self.title != nil) {
+            return "Hello, I am \(self.title!) \(self.lastName)"
         } else {
-            intro = "\(self.genderSubjectPronoun.capitalizedString) is \(title) \(self.lastName). Address and phone number are unknown."
+            return "Hello, I am \(self.firstName) \(self.lastName)"
         }
-        return intro
+        
+    }
+    
+    func createIntroduction() -> String {
+        return "\(self.createGreeting()). I live at \(self.address!). My number is \(self.phoneNumber!)."
+    }
+    
+    func thirdPartyIntroduction() -> String {
+        if (self.title != nil) {
+            if (self.address != nil && self.phoneNumber != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.title!) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Call \(self.genderObjectPronoun) at \(self.phoneNumber!)."
+            } else if (self.address != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.title!) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Phone number unknown."
+            } else if (self.phoneNumber != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.title!) \(self.lastName). Call \(self.genderObjectPronoun) at \(self.phoneNumber!). Address unknown."
+            } else {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.title!) \(self.lastName). Address and phone number are unknown."
+            }
+        } else {
+            if (self.address != nil && self.phoneNumber != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.firstName) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Call \(self.genderObjectPronoun) at \(self.phoneNumber!)."
+            } else if (self.address != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.firstName) \(self.lastName). \(self.genderSubjectPronoun.capitalizedString) lives at \(self.address!). Phone number unknown."
+            } else if (self.phoneNumber != nil) {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.firstName) \(self.lastName). Call \(self.genderObjectPronoun) at \(self.phoneNumber!). Address unknown."
+            } else {
+                return "\(self.genderSubjectPronoun.capitalizedString) is \(self.firstName) \(self.lastName). Address and phone number are unknown."
+            }
+
+        }
     }
 }
