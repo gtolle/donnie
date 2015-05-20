@@ -51,10 +51,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog(person3.thirdPartyIntroduction())
         NSLog(person4.thirdPartyIntroduction())
         
-        var names = ["Alice Marble", "Bob Barker", "Claire Underwood", "Daniel Craig"]
+        var names: [Person] = [
+            Person(
+                firstName: "Alice",
+                lastName: "Marble",
+                email: "alice@test.com"
+            ),
+            Person(
+                firstName: "Bob",
+                lastName: "Barker",
+                email: "bob@test.com"
+            ),
+            Person(
+                firstName: "Claire",
+                lastName: "Underwood",
+                email: "claire@test.com"
+            ),
+            Person(
+                firstName: "Daniel",
+                lastName: "Craig",
+                email: "daniel@test.com"
+            )
+        ]
         
         for name in names  {
-            println("Hello, I am \(name)")
+            println(name.createGreeting())
         }
         
         return true
