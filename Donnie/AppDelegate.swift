@@ -54,12 +54,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var people = [person1, person2, person3, person4]
         var emails: [String] = []
         
-        for onePerson in people  {
-            println(onePerson.createGreeting())
-            emails.append(onePerson.email)
+        for person in people  {
+            println(person.createGreeting())
+            emails.append(person.email)
         }
-        
-        println(emails)
+
+        for var i = 0; i < people.count; ++i {
+            println(emails[i])
+        }
         
         return true
     }
