@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        var person = Person(firstName: "Donnie", lastName: "Wang", email: "donnie@test.com")
-        person.address = "1 Market St. San Francisco CA 94110"
-        person.phoneNumber = "415-123-4567"
-        person.gender = "male"
-        person.title = "Maester"
+        var person1 = Person(firstName: "Donnie", lastName: "Wang", email: "donnie@test.com")
+        person1.address = "1 Market St. San Francisco CA 94110"
+        person1.phoneNumber = "415-123-4567"
+        person1.gender = "male"
+        person1.title = "Maester"
         
         var person2 = Person(firstName: "Gilman", lastName: "Tolle", email: "gilman@test.com")
         person2.gender = "male"
@@ -39,44 +39,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var person4 = Person(firstName: "Peppermint", lastName: "Patty", email: "patty@test.com")
         NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
-        NSLog("\(person.firstName) \(person.lastName), \(person.email), \(person.address!), \(person.phoneNumber!)")
+        NSLog("\(person1.firstName) \(person1.lastName), \(person1.email), \(person1.address!), \(person1.phoneNumber!)")
 
-        NSLog(person.createGreeting())
+        NSLog(person1.createGreeting())
         NSLog(person2.createGreeting())
 
-        NSLog(person.createIntroduction())
+        NSLog(person1.createIntroduction())
         
-        NSLog(person.thirdPartyIntroduction())
+        NSLog(person1.thirdPartyIntroduction())
         NSLog(person2.thirdPartyIntroduction())
         NSLog(person3.thirdPartyIntroduction())
         NSLog(person4.thirdPartyIntroduction())
         
-        var names: [Person] = [
-            Person(
-                firstName: "Alice",
-                lastName: "Marble",
-                email: "alice@test.com"
-            ),
-            Person(
-                firstName: "Bob",
-                lastName: "Barker",
-                email: "bob@test.com"
-            ),
-            Person(
-                firstName: "Claire",
-                lastName: "Underwood",
-                email: "claire@test.com"
-            ),
-            Person(
-                firstName: "Daniel",
-                lastName: "Craig",
-                email: "daniel@test.com"
-            )
-        ]
+        var people = [person1, person2, person3, person4]
+        var emails: [String] = []
         
-        for name in names  {
-            println(name.createGreeting())
+        for onePerson in people  {
+            println(onePerson.createGreeting())
+            emails.append(onePerson.email)
         }
+        
+        println(emails)
         
         return true
     }
