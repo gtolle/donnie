@@ -52,16 +52,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog(person4.thirdPartyIntroduction())
         
         var people = [person1, person2, person3, person4]
-        var emails: [String] = []
+        var emails1: [String] = []
         
+        // for-in loop
         for person in people  {
             println(person.createGreeting())
-            emails.append(person.email)
+            emails1.append(person.email)
         }
-
+        
         for var i = 0; i < people.count; ++i {
-            println(emails[i])
+            println(emails1[i])
         }
+        
+        // OK
+        var emails2 = people.map( { (person: Person) -> String in
+            return person.email
+        } )
+        println(emails2)
+        
+        // Better
+        var emails3 = people.map( { dog in return dog.email } )
+        println(emails3)
+        
+        // Betterer
+        var emails4 = people.map( { person in person.email } )
+        println(emails4)
+        
+        // Best
+        var emails5 = people.map { person in person.email }
+        println(emails5)
+        
+        // Transform array of person objects into an array of first names
+        var firstNames = people.map { person in person.firstName }
+        println(firstNames)
+        
+        // TAKE 1: Transform array of person objects into an array of full names
+        var fullNames1: [String] = []
+        for person in people {
+            fullNames1.append(person.createFullName())
+        }
+        println(fullNames1)
+        
+        // TAKE 2: Transform array of person objects into an array of full names
+        var fullNames2 = people.map { person in person.fullName }
+        println(fullNames2)
         
         return true
     }

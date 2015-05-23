@@ -17,6 +17,10 @@ class Person {
     var gender: String?
     var title: String?
     
+    var fullName: String {
+        return "\(self.firstName) \(self.lastName)"
+    }
+    
     var genderSubjectPronoun: String {
         if (self.gender == "male") {
             return "he"
@@ -41,6 +45,10 @@ class Person {
         self.firstName = firstName;
         self.lastName = lastName;
         self.email = email;
+    }
+    
+    func createFullName() -> String {
+        return "\(self.firstName) \(self.lastName)"
     }
     
     func createGreeting() -> String {
