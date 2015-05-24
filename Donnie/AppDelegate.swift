@@ -97,6 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var fullNames2 = people.map { person in person.fullName }
         println(fullNames2)
         
+        // TAKE 3: Transform array of person objects into an array of full names
+        var fullNames3 = people.map( { people in "\(people.firstName) \(people.lastName)"  } )
+        
         return true
     }
 
