@@ -21,22 +21,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        var person1 = Person(firstName: "Donnie", lastName: "Wang", email: "donnie@test.com")
+        var person1 = Person(
+            firstName: "Donnie",
+            lastName: "Wang",
+            email: "donnie@test.com",
+            honors: [
+                "The First of His Name",
+                "The Asian Sensation",
+                "Father of Snapvite"
+            ])
         person1.address = "1 Market St. San Francisco CA 94110"
         person1.phoneNumber = "415-123-4567"
         person1.gender = "male"
         person1.title = "Maester"
         
-        var person2 = Person(firstName: "Gilman", lastName: "Tolle", email: "gilman@test.com")
+        var person2 = Person(
+            firstName: "Gilman",
+            lastName: "Tolle",
+            email: "gilman@test.com",
+            honors: [
+                "The First of His Name",
+                "Master of Code",
+                "CTO @ Boon & Gable"
+            ])
         person2.gender = "male"
         person2.address = "1 Castro St. San Francisco CA 94110"
         person2.title = "Khal"
         
-        var person3 = Person(firstName: "Nicole", lastName: "Chiu-Wang", email: "nicole@test.com")
+        var person3 = Person(
+            firstName: "Nicole",
+            lastName: "Chiu-Wang",
+            email: "nicole@test.com",
+            honors: [
+                "Miss Los Angeles",
+                "Apprentice Superstar",
+                "COO @ Boon & Gable",
+                "Meerkat Queen"
+            ])
         person3.gender = "female"
         person3.phoneNumber = "415-555-1234"
         
-        var person4 = Person(firstName: "Peppermint", lastName: "Patty", email: "patty@test.com")
+        var person4 = Person(
+            firstName: "Peppermint",
+            lastName: "Patty",
+            email: "patty@test.com",
+            honors: [
+                "Peanuts Hooligan",
+                "Freckled Friend of Charlie Brown"
+            ])
         NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
         NSLog("\(person1.firstName) \(person1.lastName), \(person1.email), \(person1.address!), \(person1.phoneNumber!)")
@@ -53,6 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var people = [person1, person2, person3, person4]
         var emails1: [String] = []
+        println(people)
         
         // for-in loop
         for person in people  {
@@ -98,7 +131,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(fullNames2)
         
         // TAKE 3: Transform array of person objects into an array of full names
-        var fullNames3 = people.map( { people in "\(people.firstName) \(people.lastName)"  } )
+        var fullNames3 = people.map( { person in "\(person.firstName) \(person.lastName)"  } )
+        
+        println(people)
+        
+        // Print fullTitle for person1
+        println(person1.fullTitle)
+
+        // Print fullTitle for every person
+        var fullTitles = people.map ( { person in "\(person.title) \(person.firstName) \(person.lastName), \(person.honorList)" })
+        println(fullTitles)
         
         return true
     }

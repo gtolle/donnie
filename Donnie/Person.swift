@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Person {
+class Person : Printable {
     var firstName: String
     var lastName: String
     var email: String
@@ -16,6 +16,7 @@ class Person {
     var phoneNumber: String?
     var gender: String?
     var title: String?
+    var honors: [String]
     
     var fullName: String {
         return "\(self.firstName) \(self.lastName)"
@@ -41,10 +42,28 @@ class Person {
         }
     }
     
-    init(firstName: String, lastName: String, email: String) {
+    var description: String {
+        return "Person(\(self.firstName), \(self.lastName), \(self.email), \(self.address), \(self.gender), \(self.title)"
+    }
+    
+    var honorList: String {
+        // how to loop through honors array and join strings?
+        return ", ".join(self.honors)
+    }
+    
+    var fullTitle: String {
+        if self.title != nil {
+            return "\(self.title!) \(self.firstName) \(self.lastName), \(self.honorList)"
+        } else {
+            return "\(self.firstName) \(self.lastName), \(self.honorList)"
+        }
+    }
+    
+    init(firstName: String, lastName: String, email: String, honors: [String]) {
         self.firstName = firstName;
         self.lastName = lastName;
         self.email = email;
+        self.honors = [];
     }
     
     func createFullName() -> String {
