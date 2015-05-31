@@ -52,7 +52,7 @@ class Person : Printable {
     }
     
     var fullTitle: String {
-        if self.title != nil {
+        if (self.title != nil) {
             return "\(self.title!) \(self.firstName) \(self.lastName), \(self.honorList)"
         } else {
             return "\(self.firstName) \(self.lastName), \(self.honorList)"
