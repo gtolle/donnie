@@ -47,15 +47,14 @@ class Person : Printable {
     }
     
     var honorList: String {
-        // how to loop through honors array and join strings?
         return ", ".join(self.honors)
     }
     
     var fullTitle: String {
         if (self.title != nil) {
-            return "\(self.title!) \(self.firstName) \(self.lastName), \(self.honorList)"
+            return "\(self.title!) \(self.firstName) \(self.lastName), \(self.honorList)."
         } else {
-            return "\(self.firstName) \(self.lastName), \(self.honorList)"
+            return "\(self.firstName) \(self.lastName), \(self.honorList)."
         }
     }
     
@@ -63,7 +62,7 @@ class Person : Printable {
         self.firstName = firstName;
         self.lastName = lastName;
         self.email = email;
-        self.honors = [];
+        self.honors = honors;
     }
     
     func createFullName() -> String {

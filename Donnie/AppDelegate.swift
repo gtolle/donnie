@@ -139,7 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(person1.fullTitle)
 
         // Print fullTitle for every person
-        var fullTitles = people.map ( { person in "\(person.title) \(person.firstName) \(person.lastName), \(person.honorList)" })
+        var fullTitles = people.map ( { person in "\(person.fullTitle)" })
         println(fullTitles)
         
         return true
