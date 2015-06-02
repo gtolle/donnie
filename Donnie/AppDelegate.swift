@@ -71,6 +71,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ])
         NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
+        var person5 = Person(
+            firstName: "Oberyn",
+            lastName: "Martell",
+            email: "oberyn@test.com",
+            honors: [
+                "Red Viper of Dorne",
+                "Prince of Dorne"
+            ])
+        
         NSLog("\(person1.firstName) \(person1.lastName), \(person1.email), \(person1.address!), \(person1.phoneNumber!)")
 
         NSLog(person1.createGreeting())
@@ -83,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog(person3.thirdPartyIntroduction())
         NSLog(person4.thirdPartyIntroduction())
         
-        var people = [person1, person2, person3, person4]
+        var people = [person1, person2, person3, person4, person5]
         var emails1: [String] = []
         println(people)
         
@@ -140,6 +149,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Print fullTitle for every person
         var fullTitles = people.map ( { person in "\(person.fullTitle)" })
+        println(fullTitles)
+        
+        // Append 2 more honors to that person's honors array, then print the person's full title to be sure the new honors made it in.
+        person5.honors.append("Younger brother of Doran Martell")
+        person5.honors.append("Victim of The Mountain")
+        println(person5.fullTitle)
+        // Have to reset/repeat?
+        fullTitles = people.map ( { person in "\(person.fullTitle)" })
+        println(fullTitles)
+        
+        // Assign that person5's honors array to a whole new array with 3 totally new honors, then print the person's full title again to make sure it changed.
+        person5.honors = ["Lover of Women", "Lover of Life", "Lover of Combat"]
+        println(person5.fullTitle)
+        // Have to reset/repeat?
+        fullTitles = people.map ( { person in "\(person.fullTitle)" })
         println(fullTitles)
         
         return true

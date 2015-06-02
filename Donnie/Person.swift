@@ -103,7 +103,6 @@ class Person : Printable {
             } else {
                 return "\(self.genderSubjectPronoun.capitalizedString) is \(self.firstName) \(self.lastName). Address and phone number are unknown."
             }
-
         }
     }
 }
