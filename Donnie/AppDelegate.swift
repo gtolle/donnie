@@ -170,6 +170,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         party2.members += [person2, person4]
         println(party2.members)
         
+        // Print out the roster for each Party
+        println(party1.roster)
+        println(party2.roster)
+        
         return true
     }
 

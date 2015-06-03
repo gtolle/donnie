@@ -15,7 +15,7 @@ class Party {
     // Define a new computed property on Party called "roster" that returns a comma-separated list of the party members' names as a string along with the name of the party, like this: 
     // The Awesome Party: Jane Smith, Joan Smith
     var roster: String {
-        return "\(self.name): " + ", ".join(self.members.createFullName())
+        return "\(self.name): " + ", ".join(Person.createFullName(self.members))
     }
     
     init(name: String, members: [Person]) {
