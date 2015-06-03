@@ -18,9 +18,9 @@ class Person : Printable {
     var title: String?
     var honors: [String]
     
-    var fullName: String {
-        return "\(self.firstName) \(self.lastName)"
-    }
+//    var fullName: String {
+//        return "\(self.firstName) \(self.lastName)"
+//    }
     
     var genderSubjectPronoun: String {
         if (self.gender == "male") {

@@ -136,8 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(fullNames1)
         
         // TAKE 2: Transform array of person objects into an array of full names
-        var fullNames2 = people.map { person in person.fullName }
-        println(fullNames2)
+//        var fullNames2 = people.map { person in person.fullName }
+//        println(fullNames2)
         
         // TAKE 3: Transform array of person objects into an array of full names
         var fullNames3 = people.map( { person in "\(person.firstName) \(person.lastName)"  } )
@@ -152,19 +152,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(fullTitles)
         
         // Append 2 more honors to that person's honors array, then print the person's full title to be sure the new honors made it in.
-        person5.honors.append("Younger brother of Doran Martell")
-        person5.honors.append("Victim of The Mountain")
+        person5.honors += ["Younger brother of Doran Martell", "Victim of The Mountain"]
         println(person5.fullTitle)
-        // Have to reset/repeat?
-        fullTitles = people.map ( { person in "\(person.fullTitle)" })
-        println(fullTitles)
         
         // Assign that person5's honors array to a whole new array with 3 totally new honors, then print the person's full title again to make sure it changed.
         person5.honors = ["Lover of Women", "Lover of Life", "Lover of Combat"]
         println(person5.fullTitle)
-        // Have to reset/repeat?
-        fullTitles = people.map ( { person in "\(person.fullTitle)" })
-        println(fullTitles)
+        
+        // Create two different parties with two different names
+        var party1 = Party(name: "Nicki's Bday Party", members: [])
+        var party2 = Party(name: "Gil's Bday Party", members: [])
+        
+        // Append two different members to each party
+        party1.members += [person1, person3]
+        println(party1.members)
+        
+        party2.members += [person2, person4]
+        println(party2.members)
         
         return true
     }
