@@ -38,15 +38,19 @@ class Party {
     }
     
     func richList() -> [String] {
-        var tempArray: [String] = []
+        var filteredArray: [String] = []
         for person in members {
             if (person.dollars >= 1000) {
-                tempArray.append(person.createFullName())
+                filteredArray.append("\(person.createFullName()): \(person.dollars))")
             } else {
                 // Do nothing
             }
         }
-        return tempArray
+        return filteredArray
+        
+//        var filteredArray : [Person] = []
+//        filteredArray = members.filter { $0 >= 1000 }
+//        return filteredArray
     }
     
 //    func poorestFirst() -> [String] {
