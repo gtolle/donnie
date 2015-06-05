@@ -29,7 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "The First of His Name",
                 "The Asian Sensation",
                 "Father of Snapvite"
-            ])
+            ],
+            dollars: 10
+        )
+
         person1.address = "1 Market St. San Francisco CA 94110"
         person1.phoneNumber = "415-123-4567"
         person1.gender = "male"
@@ -43,7 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "The First of His Name",
                 "Master of Code",
                 "CTO @ Boon & Gable"
-            ])
+            ],
+            dollars: 1000
+        )
         person2.gender = "male"
         person2.address = "1 Castro St. San Francisco CA 94110"
         person2.title = "Khal"
@@ -57,7 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 "Apprentice Superstar",
                 "COO @ Boon & Gable",
                 "Meerkat Queen"
-            ])
+            ],
+            dollars: 3000
+        )
         person3.gender = "female"
         person3.phoneNumber = "415-555-1234"
         
@@ -68,7 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             honors: [
                 "Peanuts Hooligan",
                 "Freckled Friend of Charlie Brown"
-            ])
+            ],
+            dollars: 5000
+        )
         NSLog("person4's gender is " + (person4.gender ?? "decline to state"))
         
         var person5 = Person(
@@ -78,7 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             honors: [
                 "Red Viper of Dorne",
                 "Prince of Dorne"
-            ])
+            ],
+            dollars: 99
+        )
         
         NSLog("\(person1.firstName) \(person1.lastName), \(person1.email), \(person1.address!), \(person1.phoneNumber!)")
 
@@ -174,6 +185,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(party1.roster)
         println(party2.roster)
         
+        // Print out the total dollars held by everyone in the parties
+        println(party1.dollars)
+        println(party2.dollars)
+        
+        // Print richList for both parties
+        println(party1.richList())
+        println(party2.richList())
+        
         return true
     }
 
@@ -198,7 +217,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

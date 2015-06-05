@@ -18,6 +18,10 @@ class Party {
         return "\(self.name): " + ", ".join(membersFullNames())
     }
     
+    var dollars: Int {
+        return memberDollars()
+    }
+    
     init(name: String, members: [Person]) {
         self.name = name;
         self.members = members;
@@ -26,4 +30,28 @@ class Party {
     func membersFullNames() -> [String] {
         return members.map( { person in "\(person.createFullName())" } )
     }
+    
+    func memberDollars() -> Int {
+        var sum = 0
+        members.map( { person in sum += person.dollars } )
+        return sum
+    }
+    
+    func richList() -> [String] {
+        var tempArray: [String] = []
+        for person in members {
+            if (person.dollars >= 1000) {
+                tempArray.append(person.createFullName())
+            } else {
+                // Do nothing
+            }
+        }
+        return tempArray
+    }
+    
+//    func poorestFirst() -> [String] {
+//        var tempArray: [String] = []
+//        tempArray = members.map( { person in "\(person.createFullName())" } )
+//        temparray
+//    }
 }

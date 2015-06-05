@@ -17,10 +17,7 @@ class Person : Printable {
     var gender: String?
     var title: String?
     var honors: [String]
-    
-//    var fullName: String {
-//        return "\(self.firstName) \(self.lastName)"
-//    }
+    var dollars: Int
     
     var genderSubjectPronoun: String {
         if (self.gender == "male") {
@@ -58,11 +55,12 @@ class Person : Printable {
         }
     }
     
-    init(firstName: String, lastName: String, email: String, honors: [String]) {
+    init(firstName: String, lastName: String, email: String, honors: [String], dollars: Int) {
         self.firstName = firstName;
         self.lastName = lastName;
         self.email = email;
         self.honors = honors;
+        self.dollars = dollars;
     }
     
     func createFullName() -> String {
