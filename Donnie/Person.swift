@@ -40,7 +40,7 @@ class Person : Printable {
     }
     
     var description: String {
-        return "Person(\(self.firstName), \(self.lastName), \(self.email), \(self.address), \(self.gender), \(self.title)"
+        return "Person(\(self.firstName), \(self.lastName), \(self.email), \(self.address), \(self.gender), \(self.title), \(self.honors), \(self.dollars)"
     }
     
     var honorList: String {

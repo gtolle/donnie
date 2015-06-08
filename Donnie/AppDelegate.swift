@@ -193,6 +193,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println(party1.richList())
         println(party2.richList())
         
+        // Print poorestFirst for both parties
+        println(party1.poorestFirst())
+        println(party2.poorestFirst())
+        
         return true
     }
 

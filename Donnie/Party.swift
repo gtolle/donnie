@@ -36,26 +36,28 @@ class Party {
         members.map( { person in sum += person.dollars } )
         return sum
     }
-    
-    func richList() -> [String] {
-        var filteredArray: [String] = []
-        for person in members {
-            if (person.dollars >= 1000) {
-                filteredArray.append("\(person.createFullName()): \(person.dollars))")
-            } else {
-                // Do nothing
-            }
-        }
-        return filteredArray
-        
-//        var filteredArray : [Person] = []
-//        filteredArray = members.filter { $0 >= 1000 }
+
+    // Using a for loop
+//    func richList() -> [Person] {
+//        var filteredArray: [Person] = []
+//        for person in members {
+//            if (person.dollars >= 1000) {
+//                filteredArray.append(person)
+//            } else {
+//                // Do nothing
+//            }
+//        }
 //        return filteredArray
+//    }
+    
+    // Using filter method
+    func richList() -> [Person] {
+        var filteredArray = members.filter( { $0.dollars >= 1000} )
+        return filteredArray
     }
     
-//    func poorestFirst() -> [String] {
-//        var tempArray: [String] = []
-//        tempArray = members.map( { person in "\(person.createFullName())" } )
-//        temparray
-//    }
+    func poorestFirst() -> [Person] {
+        var filteredArray = members.sorted( { $0.dollars < $1.dollars } )
+        return filteredArray
+    }
 }
