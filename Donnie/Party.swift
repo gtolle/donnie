@@ -52,12 +52,12 @@ class Party {
     
     // Using filter method
     func richList() -> [Person] {
-        var filteredArray = members.filter( { $0.dollars >= 1000} )
+        var filteredArray = members.filter( { num in num.dollars >= 1000} )
         return filteredArray
     }
     
     func poorestFirst() -> [Person] {
-        var filteredArray = members.sorted( { $0.dollars < $1.dollars } )
+        var filteredArray = members.sorted( { a, b in a.dollars < b.dollars } )
         return filteredArray
     }
 }
