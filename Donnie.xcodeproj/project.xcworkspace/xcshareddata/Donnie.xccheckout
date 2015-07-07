@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F7D3DBA5-C5DC-4D32-9C18-1A2F9810584F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Donnie</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6FC40E951C23270BB45318C96D320000AB9A60F3</key>
 		<string>github.com:redhurley/donnie.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Donnie.xcodeproj/project.xcworkspace</string>
+	<string>Donnie.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6FC40E951C23270BB45318C96D320000AB9A60F3</key>
