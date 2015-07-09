@@ -40,6 +40,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.addSubview(blueRect)
         self.window?.addSubview(yellowRect)
         
+        var redLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        redLabel.text = "Red Square"
+        redLabel.backgroundColor = UIColor.lightGrayColor()
+        redLabel.sizeToFit()
+        redLabel.textAlignment = NSTextAlignment.Left
+        
+        var greenLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        greenLabel.text = "Green Square"
+        greenLabel.backgroundColor = UIColor.lightGrayColor()
+        greenLabel.sizeToFit()
+        greenLabel.textAlignment = NSTextAlignment.Left
+        
+        var blueLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        blueLabel.text = "Blue Square"
+        blueLabel.backgroundColor = UIColor.lightGrayColor()
+        blueLabel.sizeToFit()
+        blueLabel.textAlignment = NSTextAlignment.Left
+        
+        var yellowLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        yellowLabel.text = "Yellow Square"
+        yellowLabel.backgroundColor = UIColor.lightGrayColor()
+        yellowLabel.sizeToFit()
+        yellowLabel.textAlignment = NSTextAlignment.Left
+        
+        var label = UILabel(frame: CGRect(x: 8, y: 397, width: 359, height: 20))
+        label.text = "Hello World"
+        label.backgroundColor = UIColor.lightGrayColor()
+        label.textAlignment = NSTextAlignment.Center
+        
+        redRect.addSubview(redLabel)
+        greenRect.addSubview(greenLabel)
+        blueRect.addSubview(blueLabel)
+        yellowRect.addSubview(yellowLabel)
+        self.window?.addSubview(label)
+        
         return true
     }
 
