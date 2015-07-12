@@ -23,42 +23,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
-        var redRect = UIView(frame: CGRect(x: 8, y: 32, width: 175.5, height: 175.5))
+        var redRect = UIButton(frame: CGRect(x: 8, y: 32, width: 175.5, height: 175.5))
         redRect.backgroundColor = UIColor.redColor()
+        redRect.addTarget(self, action: "redButtonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        var greenRect = UIView(frame: CGRect(x: 191.5, y: 32, width: 175.5, height: 175.5))
+        var greenRect = UIButton(frame: CGRect(x: 191.5, y: 32, width: 175.5, height: 175.5))
         greenRect.backgroundColor = UIColor.greenColor()
+        greenRect.addTarget(self, action: "greenButtonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        var blueRect = UIView(frame: CGRect(x: 8, y: 215.5, width: 175.5, height: 175.5))
+        var blueRect = UIButton(frame: CGRect(x: 8, y: 215.5, width: 175.5, height: 175.5))
         blueRect.backgroundColor = UIColor.blueColor()
+        blueRect.addTarget(self, action: "blueButtonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        var yellowRect = UIView(frame: CGRect(x: 191.5, y: 215.5, width: 175.5, height: 175.5))
+        var yellowRect = UIButton(frame: CGRect(x: 191.5, y: 215.5, width: 175.5, height: 175.5))
         yellowRect.backgroundColor = UIColor.yellowColor()
+        yellowRect.addTarget(self, action: "yellowButtonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.window?.addSubview(redRect)
         self.window?.addSubview(greenRect)
         self.window?.addSubview(blueRect)
         self.window?.addSubview(yellowRect)
         
-        var redLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        var redLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 0, height: 0))
         redLabel.text = "Red Square"
         redLabel.backgroundColor = UIColor.lightGrayColor()
         redLabel.sizeToFit()
         redLabel.textAlignment = NSTextAlignment.Left
         
-        var greenLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        var greenLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 0, height: 0))
         greenLabel.text = "Green Square"
         greenLabel.backgroundColor = UIColor.lightGrayColor()
         greenLabel.sizeToFit()
         greenLabel.textAlignment = NSTextAlignment.Left
         
-        var blueLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        var blueLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 0, height: 0))
         blueLabel.text = "Blue Square"
         blueLabel.backgroundColor = UIColor.lightGrayColor()
         blueLabel.sizeToFit()
         blueLabel.textAlignment = NSTextAlignment.Left
         
-        var yellowLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 200, height: 50))
+        var yellowLabel = UILabel(frame: CGRect(x: 8, y: 8, width: 0, height: 0))
         yellowLabel.text = "Yellow Square"
         yellowLabel.backgroundColor = UIColor.lightGrayColor()
         yellowLabel.sizeToFit()
@@ -74,6 +78,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         blueRect.addSubview(blueLabel)
         yellowRect.addSubview(yellowLabel)
         self.window?.addSubview(label)
+        
+        var redImage = UIImageView(frame: CGRect(x: 62.75, y: 62.75, width: 50, height: 50))
+        redImage.image = UIImage(named: "Star.png")
+        redRect.addSubview(redImage)
+        
+        var greenImage = UIImageView(frame: CGRect(x: 62.75, y: 62.75, width: 50, height: 50))
+        greenImage.image = UIImage(named: "Star.png")
+        greenRect.addSubview(greenImage)
+        
+        var blueImage = UIImageView(frame: CGRect(x: 62.75, y: 62.75, width: 50, height: 50))
+        blueImage.image = UIImage(named: "Star.png")
+        blueRect.addSubview(blueImage)
+        
+        var yellowImage = UIImageView(frame: CGRect(x: 62.75, y: 62.75, width: 50, height: 50))
+        yellowImage.image = UIImage(named: "Star.png")
+        yellowRect.addSubview(yellowImage)
+        
+        var myButton = UIButton(frame: CGRect(x: 8, y: 433, width: 359, height: 20))
+        myButton.setTitle("Start", forState: UIControlState.Normal)
+        myButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        self.window?.addSubview(myButton)
+        myButton.addTarget(self, action: "buttonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return true
     }
@@ -98,6 +124,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func buttonTouched(button:UIButton) {
+        println("The user touched the start button")
+    }
+    
+    func redButtonTouched(button:UIButton) {
+        println("The user touched this square: redRect")
+    }
+    
+    func greenButtonTouched(button:UIButton) {
+        println("The user touched this square: greenRect")
+    }
+    
+    func blueButtonTouched(button:UIButton) {
+        println("The user touched this square: blueRect")
+    }
+    
+    func yellowButtonTouched(button:UIButton) {
+        println("The user touched this square: yellowRect")
     }
 }
 
