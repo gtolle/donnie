@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		61898A881B08EB840052FD05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A871B08EB840052FD05 /* AppDelegate.swift */; };
-		61898A8A1B08EB840052FD05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A891B08EB840052FD05 /* ViewController.swift */; };
 		61898A8F1B08EB840052FD05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61898A8E1B08EB840052FD05 /* Images.xcassets */; };
 		61898A921B08EB840052FD05 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61898A901B08EB840052FD05 /* LaunchScreen.xib */; };
 		61898A9E1B08EB840052FD05 /* DonnieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898A9D1B08EB840052FD05 /* DonnieTests.swift */; };
 		F850783E1B09632900D71E4A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850783D1B09632900D71E4A /* Person.swift */; };
+		F86C73361B5446EA00795DF8 /* SquaresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86C73351B5446EA00795DF8 /* SquaresViewController.swift */; };
 		F89211521B1F5EAF00B9262C /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89211511B1F5EAF00B9262C /* Party.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,13 +30,13 @@
 		61898A821B08EB840052FD05 /* Donnie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donnie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61898A861B08EB840052FD05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61898A871B08EB840052FD05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61898A891B08EB840052FD05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61898A8E1B08EB840052FD05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		61898A911B08EB840052FD05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		61898A971B08EB840052FD05 /* DonnieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonnieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61898A9C1B08EB840052FD05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61898A9D1B08EB840052FD05 /* DonnieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonnieTests.swift; sourceTree = "<group>"; };
 		F850783D1B09632900D71E4A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F86C73351B5446EA00795DF8 /* SquaresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquaresViewController.swift; sourceTree = "<group>"; };
 		F89211511B1F5EAF00B9262C /* Party.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +81,7 @@
 			children = (
 				61898AA71B08EC530052FD05 /* Models */,
 				61898A871B08EB840052FD05 /* AppDelegate.swift */,
-				61898A891B08EB840052FD05 /* ViewController.swift */,
+				F86C73351B5446EA00795DF8 /* SquaresViewController.swift */,
 				61898A8E1B08EB840052FD05 /* Images.xcassets */,
 				61898A901B08EB840052FD05 /* LaunchScreen.xib */,
 				61898A851B08EB840052FD05 /* Supporting Files */,
@@ -223,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F850783E1B09632900D71E4A /* Person.swift in Sources */,
-				61898A8A1B08EB840052FD05 /* ViewController.swift in Sources */,
+				F86C73361B5446EA00795DF8 /* SquaresViewController.swift in Sources */,
 				F89211521B1F5EAF00B9262C /* Party.swift in Sources */,
 				61898A881B08EB840052FD05 /* AppDelegate.swift in Sources */,
 			);
