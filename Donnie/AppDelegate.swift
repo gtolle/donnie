@@ -131,19 +131,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func redButtonTouched(button:UIButton) {
-        println("The user touched this square: redRect")
+        println("The user touched this square: \(button)")
     }
     
     func greenButtonTouched(button:UIButton) {
-        println("The user touched this square: greenRect")
+        println("The user touched this square: \(button)")
     }
     
     func blueButtonTouched(button:UIButton) {
-        println("The user touched this square: blueRect")
+        println("The user touched this square: \(button)")
     }
     
     func yellowButtonTouched(button:UIButton) {
-        println("The user touched this square: yellowRect")
+        println("The user touched this square: \(button)")
     }
 }
 
