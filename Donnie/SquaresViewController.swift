@@ -10,12 +10,6 @@ import UIKit
 
 class SquaresViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
     override func loadView() {
         self.view = UIView(frame: UIScreen.mainScreen().bounds)
         
@@ -98,6 +92,12 @@ class SquaresViewController: UIViewController {
         myButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         self.view?.addSubview(myButton)
         myButton.addTarget(self, action: "buttonTouched:", forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
