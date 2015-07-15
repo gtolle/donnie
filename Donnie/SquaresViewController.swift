@@ -22,19 +22,19 @@ class SquaresViewController: UIViewController {
     }
     
     @IBAction func redButtonTouched(sender: UIButton) {
-        println("The user touched this square: \(sender)")
+        println("The user touched this red square: \(sender)")
     }
     
     @IBAction func greenButtonTouched(sender: UIButton) {
-        println("The user touched this square: \(sender)")
+        println("The user touched this green square: \(sender)")
     }
     
     @IBAction func blueButtonTouched(sender: UIButton) {
-        println("The user touched this square: \(sender)")
+        println("The user touched this blue square: \(sender)")
     }
     
     @IBAction func yellowButtonTouched(sender: UIButton) {
-        println("The user touched this square: \(sender)")
+        println("The user touched this yellow square: \(sender)")
     }
     
     @IBAction func startButtonTouched(sender: UIButton) {
