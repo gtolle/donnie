@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SquaresViewController" customModule="Donnie" customModuleProvider="target">
             <connections>
+                <outlet property="helloWorldLabel" destination="bQb-Yt-UbW" id="Svp-MM-hWj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="rdk-WE-vJd"/>
             </connections>
         </placeholder>
@@ -25,7 +26,7 @@
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="redButtonTouched:" destination="-1" eventType="touchUpInside" id="S2I-9Q-GCq"/>
+                                <action selector="redButtonTouched:" destination="-1" eventType="touchUpInside" id="QQi-RM-E5c"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Square" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-vi-XBt">
@@ -69,7 +70,6 @@
                             </state>
                             <connections>
                                 <action selector="greenButtonTouched:" destination="-1" eventType="touchUpInside" id="0xr-U1-617"/>
-                                <action selector="redButtonTouched:" destination="-1" eventType="touchUpInside" id="BaM-nM-jvt"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Square" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt1-Ld-7Az">
@@ -113,8 +113,6 @@
                             </state>
                             <connections>
                                 <action selector="blueButtonTouched:" destination="-1" eventType="touchUpInside" id="h8u-Ou-WGd"/>
-                                <action selector="greenButtonTouched:" destination="-1" eventType="touchUpInside" id="BTJ-R6-8sg"/>
-                                <action selector="redButtonTouched:" destination="-1" eventType="touchUpInside" id="06q-Om-pBb"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Square" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bt7-oT-HwK">
@@ -178,8 +176,6 @@
                                 <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="greenButtonTouched:" destination="-1" eventType="touchUpInside" id="TYe-n4-Rdl"/>
-                                <action selector="redButtonTouched:" destination="-1" eventType="touchUpInside" id="MEs-PZ-VdA"/>
                                 <action selector="yellowButtonTouched:" destination="-1" eventType="touchUpInside" id="iu0-Iy-NeW"/>
                             </connections>
                         </button>

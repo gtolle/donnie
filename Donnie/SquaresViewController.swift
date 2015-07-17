@@ -9,6 +9,7 @@
 import UIKit
 
 class SquaresViewController: UIViewController {
+    @IBOutlet weak var helloWorldLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +23,27 @@ class SquaresViewController: UIViewController {
     }
     
     @IBAction func redButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the red square"
         println("The user touched this red square: \(sender)")
     }
     
     @IBAction func greenButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the green square"
         println("The user touched this green square: \(sender)")
     }
     
     @IBAction func blueButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the blue square"
         println("The user touched this blue square: \(sender)")
     }
     
     @IBAction func yellowButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the yellow square"
         println("The user touched this yellow square: \(sender)")
     }
     
     @IBAction func startButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "Started the game"
         println("The user touched the start button")
     }
 }
