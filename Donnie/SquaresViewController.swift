@@ -10,6 +10,10 @@ import UIKit
 
 class SquaresViewController: UIViewController {
     @IBOutlet weak var helloWorldLabel: UILabel!
+    @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var blueButton: UIButton!
+    @IBOutlet weak var yellowButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,22 +27,55 @@ class SquaresViewController: UIViewController {
     }
     
     @IBAction func redButtonTouched(sender: UIButton) {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.redButton.alpha = 0.0;
+            },
+            completion: { (Bool) -> Void in
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.redButton.alpha = 1;
+                });
+            }
+        );
         self.helloWorldLabel.text = "You touched the red square"
         println("The user touched this red square: \(sender)")
     }
     
     @IBAction func greenButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the green square"
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.greenButton.alpha = 0.0;
+            },
+            completion: { (Bool) -> Void in
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.greenButton.alpha = 1;
+                });
+            }
+        );        self.helloWorldLabel.text = "You touched the green square"
         println("The user touched this green square: \(sender)")
     }
     
     @IBAction func blueButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the blue square"
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.blueButton.alpha = 0.0;
+            },
+            completion: { (Bool) -> Void in
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.blueButton.alpha = 1;
+                });
+            }
+        );        self.helloWorldLabel.text = "You touched the blue square"
         println("The user touched this blue square: \(sender)")
     }
     
     @IBAction func yellowButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the yellow square"
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.yellowButton.alpha = 0.0;
+            },
+            completion: { (Bool) -> Void in
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.yellowButton.alpha = 1;
+                });
+            }
+        );        self.helloWorldLabel.text = "You touched the yellow square"
         println("The user touched this yellow square: \(sender)")
     }
     
