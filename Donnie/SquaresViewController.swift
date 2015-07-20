@@ -27,6 +27,51 @@ class SquaresViewController: UIViewController {
     }
     
     @IBAction func redButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the red square"
+        println("The user touched this red square: \(sender)")
+    }
+    
+    @IBAction func greenButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the green square"
+        println("The user touched this green square: \(sender)")
+    }
+    
+    @IBAction func blueButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the blue square"
+        println("The user touched this blue square: \(sender)")
+    }
+    
+    @IBAction func yellowButtonTouched(sender: UIButton) {
+        self.helloWorldLabel.text = "You touched the yellow square"
+        println("The user touched this yellow square: \(sender)")
+    }
+    
+    @IBAction func startButtonTouched(sender: UIButton) {
+        var sequence: [AnyObject] = []
+        sequence.append(pickNextSquare());
+        // blink the squares in the sequence
+        for square in sequence {
+            if (square === 0) {
+                blinkRedSquare()
+            } else if (square === 1) {
+                blinkGreenSquare()
+            } else if (square === 2) {
+                blinkBlueSquare()
+            } else {
+                blinkyellowSquare()
+            }
+        }
+        
+        self.helloWorldLabel.text = "Started the game"
+        println("The user touched the start button")
+    }
+    
+    func pickNextSquare() -> Int {
+        var randomNumber = Int(arc4random_uniform(4));
+        return randomNumber
+    }
+    
+    func blinkRedSquare() {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.redButton.alpha = 0.0;
             },
@@ -36,11 +81,9 @@ class SquaresViewController: UIViewController {
                 });
             }
         );
-        self.helloWorldLabel.text = "You touched the red square"
-        println("The user touched this red square: \(sender)")
     }
     
-    @IBAction func greenButtonTouched(sender: UIButton) {
+    func blinkGreenSquare() {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.greenButton.alpha = 0.0;
             },
@@ -49,11 +92,10 @@ class SquaresViewController: UIViewController {
                     self.greenButton.alpha = 1;
                 });
             }
-        );        self.helloWorldLabel.text = "You touched the green square"
-        println("The user touched this green square: \(sender)")
+        );
     }
     
-    @IBAction func blueButtonTouched(sender: UIButton) {
+    func blinkBlueSquare() {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.blueButton.alpha = 0.0;
             },
@@ -62,11 +104,10 @@ class SquaresViewController: UIViewController {
                     self.blueButton.alpha = 1;
                 });
             }
-        );        self.helloWorldLabel.text = "You touched the blue square"
-        println("The user touched this blue square: \(sender)")
+        );
     }
     
-    @IBAction func yellowButtonTouched(sender: UIButton) {
+    func blinkyellowSquare() {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             self.yellowButton.alpha = 0.0;
             },
@@ -75,13 +116,7 @@ class SquaresViewController: UIViewController {
                     self.yellowButton.alpha = 1;
                 });
             }
-        );        self.helloWorldLabel.text = "You touched the yellow square"
-        println("The user touched this yellow square: \(sender)")
-    }
-    
-    @IBAction func startButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "Started the game"
-        println("The user touched the start button")
+        );
     }
 }
 
