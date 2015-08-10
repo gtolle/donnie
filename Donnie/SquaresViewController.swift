@@ -15,9 +15,10 @@ class SquaresViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
     
+    var sequence: [AnyObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -27,96 +28,96 @@ class SquaresViewController: UIViewController {
     }
     
     @IBAction func redButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the red square"
-        println("The user touched this red square: \(sender)")
+        self.helloWorldLabel.text = "You touched red"
+        println("The user touched the red square: \(sender)")
     }
     
     @IBAction func greenButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the green square"
-        println("The user touched this green square: \(sender)")
+        self.helloWorldLabel.text = "You touched green"
+        println("The user touched the green square: \(sender)")
     }
     
     @IBAction func blueButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the blue square"
-        println("The user touched this blue square: \(sender)")
+        self.helloWorldLabel.text = "You touched blue"
+        println("The user touched the blue square: \(sender)")
     }
     
     @IBAction func yellowButtonTouched(sender: UIButton) {
-        self.helloWorldLabel.text = "You touched the yellow square"
-        println("The user touched this yellow square: \(sender)")
+        self.helloWorldLabel.text = "You touched yellow"
+        println("The user touched the yellow square: \(sender)")
     }
     
     @IBAction func startButtonTouched(sender: UIButton) {
-        var sequence: [AnyObject] = []
-        sequence.append(pickNextSquare());
-        // blink the squares in the sequence
-        for square in sequence {
-            if (square === 0) {
-                blinkRedSquare()
-            } else if (square === 1) {
-                blinkGreenSquare()
-            } else if (square === 2) {
-                blinkBlueSquare()
-            } else {
-                blinkyellowSquare()
-            }
-        }
+        // add new square to sequence
+        addNewSquare()
         
+        // blink the squares
+        blinkSequenceSquareAtIndex(0)
+
         self.helloWorldLabel.text = "Started the game"
         println("The user touched the start button")
+        println(sequence)
     }
     
-    func pickNextSquare() -> Int {
-        var randomNumber = Int(arc4random_uniform(4));
-        return randomNumber
-    }
+    var index = 0
     
-    func blinkRedSquare() {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.redButton.alpha = 0.0;
-            },
-            completion: { (Bool) -> Void in
-                UIView.animateWithDuration(0.5, animations: { () -> Void in
-                    self.redButton.alpha = 1;
-                });
+    func blinkSequenceSquareAtIndex(index: Int) {
+        if index >= sequence.count {
+            return
+        } else {
+            if sequence[index] as! NSObject == redButton {
+                UIView.animateWithDuration(1.0, animations: { () -> Void in
+                    self.redButton.alpha = 0.0;
+                    },
+                    completion: { (Bool) -> Void in
+                        UIView.animateWithDuration(1.0, animations: { () -> Void in
+                            self.redButton.alpha = 1;
+                        });
+                        self.blinkSequenceSquareAtIndex(index+1)
+                    }
+                );
+            } else if sequence[index] as! NSObject == greenButton {
+                UIView.animateWithDuration(1.0, animations: { () -> Void in
+                    self.greenButton.alpha = 0.0;
+                    },
+                    completion: { (Bool) -> Void in
+                        UIView.animateWithDuration(1.0, animations: { () -> Void in
+                            self.greenButton.alpha = 1;
+                        });
+                        self.blinkSequenceSquareAtIndex(index+1)
+                    }
+                );
+            } else if sequence[index] as! NSObject == blueButton {
+                UIView.animateWithDuration(1.0, animations: { () -> Void in
+                    self.blueButton.alpha = 0.0;
+                    },
+                    completion: { (Bool) -> Void in
+                        UIView.animateWithDuration(1.0, animations: { () -> Void in
+                            self.blueButton.alpha = 1;
+                        });
+                        self.blinkSequenceSquareAtIndex(index+1)
+                    }
+                );
+            } else {
+                UIView.animateWithDuration(1.0, animations: { () -> Void in
+                    self.yellowButton.alpha = 0.0;
+                    },
+                    completion: { (Bool) -> Void in
+                        UIView.animateWithDuration(1.0, animations: { () -> Void in
+                            self.yellowButton.alpha = 1;
+                        });
+                        self.blinkSequenceSquareAtIndex(index+1)
+                    }
+                );
             }
-        );
+
+        }
     }
     
-    func blinkGreenSquare() {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.greenButton.alpha = 0.0;
-            },
-            completion: { (Bool) -> Void in
-                UIView.animateWithDuration(0.5, animations: { () -> Void in
-                    self.greenButton.alpha = 1;
-                });
-            }
-        );
-    }
-    
-    func blinkBlueSquare() {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.blueButton.alpha = 0.0;
-            },
-            completion: { (Bool) -> Void in
-                UIView.animateWithDuration(0.5, animations: { () -> Void in
-                    self.blueButton.alpha = 1;
-                });
-            }
-        );
-    }
-    
-    func blinkyellowSquare() {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.yellowButton.alpha = 0.0;
-            },
-            completion: { (Bool) -> Void in
-                UIView.animateWithDuration(0.5, animations: { () -> Void in
-                    self.yellowButton.alpha = 1;
-                });
-            }
-        );
+    func addNewSquare() {
+        var squares = [redButton, greenButton, blueButton, yellowButton]
+        var randomNumber = Int(arc4random_uniform(4))
+        sequence.append(squares[randomNumber])
     }
 }
 
