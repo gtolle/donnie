@@ -15,7 +15,7 @@ class SquaresViewController: UIViewController {
     @IBOutlet weak var blueButton: UIButton!
     @IBOutlet weak var yellowButton: UIButton!
     
-    var sequence: [AnyObject] = []
+    var sequence: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,57 +57,25 @@ class SquaresViewController: UIViewController {
         self.helloWorldLabel.text = "Started the game"
         println("The user touched the start button")
         println(sequence)
+        
+        // listen for user taps
+        
     }
     
     func blinkSequenceSquareAtIndex(index: Int) {
-        if index >= sequence.count {
+        if (index >= sequence.count) {
             return
         } else {
-            if sequence[index] as! NSObject == redButton {
-                UIView.animateWithDuration(0.7, animations: { () -> Void in
-                    self.redButton.alpha = 0.0;
-                    },
-                    completion: { (Bool) -> Void in
-                        UIView.animateWithDuration(0.7, animations: { () -> Void in
-                            self.redButton.alpha = 1;
-                        });
-                        self.blinkSequenceSquareAtIndex(index + 1)
-                    }
-                );
-            } else if sequence[index] as! NSObject == greenButton {
-                UIView.animateWithDuration(0.7, animations: { () -> Void in
-                    self.greenButton.alpha = 0.0;
-                    },
-                    completion: { (Bool) -> Void in
-                        UIView.animateWithDuration(0.7, animations: { () -> Void in
-                            self.greenButton.alpha = 1;
-                        });
-                        self.blinkSequenceSquareAtIndex(index + 1)
-                    }
-                );
-            } else if sequence[index] as! NSObject == blueButton {
-                UIView.animateWithDuration(0.7, animations: { () -> Void in
-                    self.blueButton.alpha = 0.0;
-                    },
-                    completion: { (Bool) -> Void in
-                        UIView.animateWithDuration(0.7, animations: { () -> Void in
-                            self.blueButton.alpha = 1;
-                        });
-                        self.blinkSequenceSquareAtIndex(index + 1)
-                    }
-                );
-            } else {
-                UIView.animateWithDuration(0.7, animations: { () -> Void in
-                    self.yellowButton.alpha = 0.0;
-                    },
-                    completion: { (Bool) -> Void in
-                        UIView.animateWithDuration(0.7, animations: { () -> Void in
-                            self.yellowButton.alpha = 1;
-                        });
-                        self.blinkSequenceSquareAtIndex(index + 1)
-                    }
-                );
-            }
+            UIView.animateWithDuration(0.8, animations: { () -> Void in
+                self.sequence[index].alpha = 0.0;
+                },
+                completion: { (Bool) -> Void in
+                    UIView.animateWithDuration(0.8, animations: { () -> Void in
+                        self.sequence[index].alpha = 1;
+                    });
+                    self.blinkSequenceSquareAtIndex(index + 1)
+                }
+            );
         }
     }
     
